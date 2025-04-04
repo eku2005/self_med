@@ -1,0 +1,6 @@
+streamlit
+openai
+pandas
+pillow
+numpy
+opencv-python
