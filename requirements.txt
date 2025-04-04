@@ -3,4 +3,4 @@ openai
 pandas
 pillow
 numpy
-opencv-python
+opencv-python-headless
