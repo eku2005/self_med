@@ -41,7 +41,7 @@ DOCTORS_HOSPITALS = pd.DataFrame({
 })
 
 def main():
-    st.title("AI-Powered Self-Medication Helper")
+    st.title("MediBuddy")
     menu = ["Home", "Health Tracking", "Pill Identifier", "Condition Recognizer", "AI Health Query", "FAQs", "Doctors & Hospitals"]
     choice = st.sidebar.selectbox("Navigation", menu)
 
