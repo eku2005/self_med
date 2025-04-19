@@ -121,7 +121,7 @@ def condition_recognizer():
             st.metric("Severity", "Moderate", "Level 2")
             st.metric("Recommendation", "Consult Dermatologist")
     else:
-        st.image("eczema2.jpg", caption="Skin Condition", width=200)
+        st.image("eczema2.jpg", caption="Skin Condition", width=400)
         st.info("Data for preview:")
         st.write("**Condition:** Eczema  \n**Confidence:** 87%  \n**Severity:** Moderate (Level 2)  \n**Recommendation:** Consult Dermatologist")
 
