@@ -55,8 +55,6 @@ def home():
     """)
     col1, col2 = st.columns([2, 1])
     with col1:
-        st.image("people.jpg", width=300)
-    with col2:
         st.image("pills.jpg", caption="Smart Medication Management", width=200)
     st.header("How can we help you today?")
     st.write("Select a feature from the sidebar to get started.")
