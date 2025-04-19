@@ -108,13 +108,17 @@ def smartwatch_connect():
 
 def faqs():
     st.header("❓ Frequently Asked Questions")
+
     with st.expander("Is self-medication safe?"):
         st.write("While occasional use is acceptable, consult professionals for persistent or serious symptoms.")
+
     with st.expander("How accurate is pill identification?"):
         st.write("Our database covers common medications. For unknown pills, always consult a pharmacist or doctor.")
+
     with st.expander("Can I trust AI health advice?"):
         st.write("AI suggestions are for guidance only and should be verified with medical professionals.")
-        with st.expander("What are over-the-counter (OTC) medicines?"):
+
+    with st.expander("What are over-the-counter (OTC) medicines?"):
         st.write(
             "OTC medicines are drugs you can buy without a prescription. They are used for treating minor health issues like pain, allergies, coughs, colds, indigestion, and skin problems. Always read the label and follow instructions for safe use.[1][4]"
         )
@@ -184,6 +188,7 @@ def faqs():
             "- You have difficulty breathing, chest pain, or severe allergic reaction\n"
             "- OTC medicines or creams do not help after a few days[1][3][4]"
         )
+
 
 def doctors_hospitals():
     st.header("🏥 Healthcare Providers")
