@@ -10,17 +10,21 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for background
+# Custom CSS for background and text color
 st.markdown("""
 <style>
 [data-testid="stAppViewContainer"] {
-    background: linear-gradient(120deg, #f0f2f6, #ffffff);
+    background: #f7fafc;
+    color: #222 !important;
+}
+h1, h2, h3, h4, h5, h6, p, div, span, li {
+    color: #222 !important;
 }
 </style>
 """, unsafe_allow_html=True)
 
 # Sidebar
-st.sidebar.image("https://cdn-icons-png.flaticon.com/512/2972/2972557.png", width=80)
+st.sidebar.image("medibuddy_logo.png", width=80)  # Use your local logo image
 st.sidebar.title("MediBuddy")
 st.sidebar.markdown("Your AI-powered self-medication helper.")
 
@@ -56,9 +60,9 @@ def home():
     """)
     col1, col2 = st.columns([2, 1])
     with col1:
-        st.image("https://cdn.pixabay.com/photo/2017/08/01/08/11/people-2563491_1280.jpg", use_container_width=True)
+        st.image("people.jpg", use_container_width=True)  # Use your local image
     with col2:
-        st.image("https://cdn.pixabay.com/photo/2016/11/22/23/24/pills-1851260_1280.jpg", caption="Smart Medication Management", use_container_width=True)
+        st.image("pills.jpg", caption="Smart Medication Management", use_container_width=True)  # Use your local image
     st.header("How can we help you today?")
     st.write("Select a feature from the sidebar to get started.")
 
