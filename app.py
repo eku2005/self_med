@@ -79,7 +79,7 @@ def home():
     st.write("Select a feature from the sidebar to get started.")
     col1, col2 = st.columns([2, 1])
     with col1:
-        st.image("pills.jpg", caption="Smart Medication Management", width=100)
+        st.image("pills.jpg", caption="Smart Medication Management", width=170)
 
 def health_tracking():
     st.header("📊 Health Dashboard")
@@ -121,7 +121,7 @@ def condition_recognizer():
             st.metric("Severity", "Moderate", "Level 2")
             st.metric("Recommendation", "Consult Dermatologist")
     else:
-        st.image("eczema.png", caption="Skin Condition", width=250)
+        st.image("https://cdn.pixabay.com/photo/2017/06/20/19/22/eczema-2428710_1280.jpg", caption="Skin Condition", width=250)
         st.info("Data for preview:")
         st.write("**Condition:** Eczema  \n**Confidence:** 87%  \n**Severity:** Moderate (Level 2)  \n**Recommendation:** Consult Dermatologist")
 
