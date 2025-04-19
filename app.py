@@ -1,8 +1,6 @@
 import streamlit as st
-from PIL import Image
 import pandas as pd
 
-# Set page config FIRST!
 st.set_page_config(
     page_title="MediBuddy: Self-Medication Assistant",
     page_icon="💊",
@@ -10,21 +8,20 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for background and text color
+# Custom CSS for pastel purple background and white text
 st.markdown("""
 <style>
 [data-testid="stAppViewContainer"] {
-    background: #f7fafc;
-    color: #222 !important;
+    background: #b39ddb;
 }
-h1, h2, h3, h4, h5, h6, p, div, span, li {
-    color: #222 !important;
+h1, h2, h3, h4, h5, h6, p, div, span, li, label {
+    color: #fff !important;
 }
 </style>
 """, unsafe_allow_html=True)
 
-# Sidebar
-st.sidebar.image("medibuddy_logo.png", width=80)  # Use your local logo image
+# Sidebar with larger logo
+st.sidebar.image("https://cdn-icons-png.flaticon.com/512/2972/2972557.png", width=120)
 st.sidebar.title("MediBuddy")
 st.sidebar.markdown("Your AI-powered self-medication helper.")
 
@@ -39,7 +36,6 @@ menu = [
 ]
 choice = st.sidebar.selectbox("Navigate", menu)
 
-# Sample data for doctors
 DOCTORS_HOSPITALS = pd.DataFrame({
     "Name": ["Dr. A Sharma", "Dr. B Gupta"],
     "Specialization": ["General Physician", "Dermatologist"],
@@ -51,7 +47,6 @@ def home():
     st.title("💊 MediBuddy: Smart Health Assistant")
     st.markdown("""
     Welcome to **MediBuddy**, your AI-powered companion for safe self-medication.
-
     - **Track** health metrics  
     - **Identify** unknown pills  
     - **Scan** skin conditions  
@@ -60,9 +55,9 @@ def home():
     """)
     col1, col2 = st.columns([2, 1])
     with col1:
-        st.image("people.jpg", use_container_width=True)  # Use your local image
+        st.image("https://cdn.pixabay.com/photo/2017/08/01/08/11/people-2563491_1280.jpg", width=300)
     with col2:
-        st.image("pills.jpg", caption="Smart Medication Management", use_container_width=True)  # Use your local image
+        st.image("https://cdn.pixabay.com/photo/2016/11/22/23/24/pills-1851260_1280.jpg", caption="Smart Medication Management", width=200)
     st.header("How can we help you today?")
     st.write("Select a feature from the sidebar to get started.")
 
@@ -94,8 +89,7 @@ def condition_recognizer():
     st.header("🩺 Skin Condition Analysis")
     uploaded_file = st.file_uploader("Upload skin condition photo", type=["jpg", "png", "jpeg"])
     if uploaded_file:
-        img = Image.open(uploaded_file)
-        st.image(img, caption="Uploaded Image", use_container_width=True)
+        st.image(uploaded_file, caption="Uploaded Image", width=250)
         with st.spinner("Analyzing image..."):
             st.subheader("Analysis Results")
             st.metric("Condition", "Eczema", "87% confidence")
@@ -127,7 +121,6 @@ def doctors_hospitals():
     st.header("🏥 Healthcare Providers")
     st.dataframe(DOCTORS_HOSPITALS, use_container_width=True)
 
-# Routing
 if choice == "🏠 Home":
     home()
 elif choice == "📊 Health Tracking":
