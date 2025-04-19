@@ -55,9 +55,9 @@ def home():
     """)
     col1, col2 = st.columns([2, 1])
     with col1:
-        st.image("https://cdn.pixabay.com/photo/2017/08/01/08/11/people-2563491_1280.jpg", width=300)
+        st.image("people.jpg", width=300)
     with col2:
-        st.image("https://cdn.pixabay.com/photo/2016/11/22/23/24/pills-1851260_1280.jpg", caption="Smart Medication Management", width=200)
+        st.image("pills.jpg", caption="Smart Medication Management", width=200)
     st.header("How can we help you today?")
     st.write("Select a feature from the sidebar to get started.")
 
