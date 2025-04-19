@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6, p, div, span, li, label {
 """, unsafe_allow_html=True)
 
 # Sidebar with larger logo
-st.sidebar.image("https://cdn-icons-png.flaticon.com/512/2972/2972557.png", width=120)
+st.sidebar.image("medibuddy_logo.png", width=120)
 st.sidebar.title("MediBuddy")
 st.sidebar.markdown("Your AI-powered self-medication helper.")
 
@@ -99,7 +99,7 @@ def smartwatch_connect():
     device = st.selectbox("Select Device", ["Apple Watch", "Fitbit", "Garmin", "Samsung"])
     if st.button("🔗 Connect Device"):
         st.success(f"Connected to {device} successfully!")
-    st.subheader("Live Health Data (Simulated)")
+    st.subheader("Live Health Data")
     st.line_chart(pd.DataFrame({
         "Heart Rate": [72, 75, 80, 78, 76],
         "Steps": [0, 150, 450, 800, 1200],
@@ -114,6 +114,76 @@ def faqs():
         st.write("Our database covers common medications. For unknown pills, always consult a pharmacist or doctor.")
     with st.expander("Can I trust AI health advice?"):
         st.write("AI suggestions are for guidance only and should be verified with medical professionals.")
+        with st.expander("What are over-the-counter (OTC) medicines?"):
+        st.write(
+            "OTC medicines are drugs you can buy without a prescription. They are used for treating minor health issues like pain, allergies, coughs, colds, indigestion, and skin problems. Always read the label and follow instructions for safe use.[1][4]"
+        )
+
+    with st.expander("What are essential OTC medicines to keep in a first aid kit?"):
+        st.write(
+            "- **Acetaminophen (Paracetamol):** For fever and mild pain relief.\n"
+            "- **Ibuprofen/Aspirin:** For pain, inflammation, and fever.\n"
+            "- **Antihistamines (e.g., Diphenhydramine, Loratadine):** For allergies and itching.\n"
+            "- **Cough suppressants and decongestants:** For cold and cough symptoms.\n"
+            "- **Antacids:** For indigestion or heartburn.\n"
+            "- **Bismuth subsalicylate:** For nausea or diarrhea.\n"
+            "- **Oral rehydration salts:** For dehydration due to diarrhea or vomiting.[2][3][5]"
+        )
+
+    with st.expander("Which OTC creams should I keep at home?"):
+        st.write(
+            "- **Hydrocortisone cream:** For mild skin inflammation, rashes, and insect bites (not for use on the face unless prescribed).[5]\n"
+            "- **Antiseptic cream:** For minor cuts, scrapes, and bites to prevent infection.\n"
+            "- **Antifungal cream:** For athlete’s foot or ringworm.\n"
+            "- **Aloe vera gel:** For minor burns or sunburn.\n"
+            "- **Haemorrhoid creams:** For itching and discomfort from piles.[5][6]"
+        )
+
+    with st.expander("What should be in a basic first aid kit?"):
+        st.write(
+            "- Adhesive bandages (various sizes)\n"
+            "- Sterile gauze pads and adhesive tape\n"
+            "- Antiseptic wipes or solution\n"
+            "- Antibiotic ointment (e.g., Polysporin)\n"
+            "- Tweezers and scissors\n"
+            "- Exam gloves\n"
+            "- Cold pack\n"
+            "- Cotton balls or swabs\n"
+            "- Oral OTC pain relievers (e.g., Tylenol, Advil)\n"
+            "- First aid manual or instructions[3][7]"
+        )
+
+    with st.expander("Are OTC medicines completely safe?"):
+        st.write(
+            "No medicine is completely risk-free. OTC drugs can cause side effects, allergic reactions, or interact with other medicines. Always follow the package directions and consult a pharmacist or doctor if you are unsure or if you have chronic health conditions.[1][4]"
+        )
+
+    with st.expander("Can I use OTC creams for all rashes or skin problems?"):
+        st.write(
+            "Not all rashes or skin issues should be treated with OTC creams. For example, hydrocortisone should not be used on the face unless prescribed. If a rash worsens, spreads, or is accompanied by fever or other symptoms, seek medical advice.[5][6]"
+        )
+
+    with st.expander("How do I use antiviral creams for cold sores?"):
+        st.write(
+            "Apply antiviral cream (like aciclovir) as soon as you notice the first signs of a cold sore. Using it later may not be effective. Only use on lips and face, and not for children unless advised by a doctor.[6]"
+        )
+
+    with st.expander("What OTC treatments are available for insect bites and stings?"):
+        st.write(
+            "- **Calamine lotion or creams for itching**\n"
+            "- **Oral antihistamines for allergic reactions**\n"
+            "- **Antiseptic creams to prevent infection**\n"
+            "Most bites and stings improve in a few hours or days. Seek help if you have severe swelling, difficulty breathing, or other serious symptoms.[6]"
+        )
+
+    with st.expander("When should I see a doctor instead of using first aid or OTC medicines?"):
+        st.write(
+            "See a doctor if:\n"
+            "- Symptoms are severe, persistent, or worsening\n"
+            "- There is heavy bleeding, deep wounds, or signs of infection\n"
+            "- You have difficulty breathing, chest pain, or severe allergic reaction\n"
+            "- OTC medicines or creams do not help after a few days[1][3][4]"
+        )
 
 def doctors_hospitals():
     st.header("🏥 Healthcare Providers")
